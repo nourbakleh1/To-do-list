@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:rgb(218, 218, 218);
+    
+
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.form{
+    width:90%;
+    margin: 50px auto;
+    background-color: #e8e8e8;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 2px 5px #777,-2px -2px 2px 3px red;
+}
+.form .input,.form .add,.form button{
+    padding: 10px;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    color:rgb(255, 61, 2);
+    font-size: 16px;
+}
+.form .input{
+    width:65%;
+}
+.form .add,.form button{
+    width:15%;
+    background-color: red;
+    color:#fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+
+}
+@media (max-width:767px) {
+    .form .add,.form button{
+        width:fit-content;
+    }
+    .form .input,.form .add,.form button{
+        padding: 5px;
+        
+        font-size: 11px;
+    }
+    .tasks .task span{
+        
+        font-size: 11px !important;
+
+        padding: 5px !important;       
+    }
+}
+.form .input::placeholder{
+    color:rgb(184, 184, 184);
+}
+
+.tasks{
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px 2px 5px #777,-2px -2px 2px 3px red;
+    width:90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.tasks .task{
+    width:100%;
+    background-color: white;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tasks .task:not(:last-child){
+    margin-bottom: 15px;
+}
+.tasks .task:hover{
+    background-color: #f7f7f7;
+}
+.tasks .task.done{
+    opacity: 0.6;
+    position: relative;
+    
+}
+.tasks .task.done::after{
+    content: "completed";
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+    height: 30px;
+    line-height: 30px;
+    color:rgb(25,200,35);
+    padding: 5px;
+    font-size: 20px;
+
+
+}
+.tasks .task.done::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height: 0%;
+    bottom: 2px;
+    left: 0;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    background-color:rgb(171, 235, 164) ;
+
+}
+@keyframes move {
+    to{height:10px;}
+    
+}
+.tasks .task span{
+    font-weight: bold;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin:10px 15%;
+}
+.info .text{
+    background-color: rgb(162, 161, 161);
+    font-weight: 800;
+    
+}
+
+
